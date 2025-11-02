@@ -1,4 +1,9 @@
+/* THEME TOKENS */
 :root {
+	--container-max: 1200px;
+	--sidebar-w: 420px;
+	--gutter: 64px;
+
 	--bg: #0b1220;
 	--fg: #e6edf6;
 	--muted: #9fb0c6;
@@ -6,7 +11,9 @@
 	--border: #24314c;
 	--chip-bg: #16233d;
 	--chip-fg: #a9c1ff;
+
 	--radius: 18px;
+	--shadow-lg: 0 20px 60px rgba(0, 0, 0, .35);
 }
 
 html,
@@ -22,29 +29,28 @@ body {
 	line-height: 1.6;
 }
 
-/* Frame */
+/* ========== MOBILE-FIRST LAYOUT (stacked) ========== */
 .container {
-	display: flex;
-	max-width: 1200px;
+	max-width: var(--container-max);
 	margin: 0 auto;
-	padding: 64px 24px;
+	padding: 24px 16px 80px;
+	display: block;
+	/* stacked on mobile */
 }
 
-/* LEFT: fixed (non-scroll) */
 .sidebar {
-	position: fixed;
-	top: 32px;
-	bottom: 32px;
-	left: max(calc((100vw - 1200px) / 2 + 24px), 16px);
-	width: 420px;
+	position: static;
+	/* scrolls on mobile */
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	padding-right: 24px;
+	gap: 24px;
+	margin-bottom: 24px;
 }
 
 .profile h1 {
-	font-size: 40px;
+	font-size: clamp(28px, 6vw, 40px);
+	line-height: 1.1;
 	margin: 0 0 8px;
 }
 
@@ -55,18 +61,19 @@ body {
 
 .profile .summary {
 	color: var(--muted);
-	margin: 16px 0 32px;
-	max-width: 35ch;
+	margin: 12px 0 16px;
+	max-width: 60ch;
 }
 
 .nav-links a {
-	display: block;
+	display: inline-block;
+	margin-right: 18px;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: var(--muted);
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 800;
-	padding: 10px 0;
+	padding: 8px 0;
 	border-bottom: 1px solid transparent;
 	letter-spacing: .12em;
 	transition: color .2s ease, border-color .2s ease;
@@ -79,7 +86,7 @@ body {
 
 .social-icons {
 	display: flex;
-	gap: 16px;
+	gap: 12px;
 	margin-top: auto;
 }
 
@@ -97,22 +104,19 @@ body {
 
 .icon-btn:hover {
 	color: var(--fg);
-	box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+	box-shadow: var(--shadow-lg);
 }
 
-/* RIGHT: scrolls */
 .main-content {
-	margin-left: calc(420px + 64px);
-	flex: 1;
-	padding-bottom: 140px;
+	/* stacked by default */
 }
 
 section {
 	background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0));
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	padding: 28px;
-	margin-bottom: 28px;
+	padding: 20px;
+	margin-bottom: 20px;
 	box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
 }
 
@@ -120,14 +124,14 @@ section {
 	text-transform: uppercase;
 	letter-spacing: .12em;
 	color: var(--muted);
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 800;
 	margin-bottom: 8px;
 }
 
 h2 {
-	margin: 4px 0 12px;
-	font-size: 20px;
+	margin: 6px 0 10px;
+	font-size: clamp(18px, 3.6vw, 22px);
 }
 
 p {
@@ -138,13 +142,14 @@ p {
 /* Experience blocks */
 .experience-item {
 	display: grid;
-	grid-template-columns: 140px 1fr;
-	gap: 24px;
-	padding: 18px;
+	grid-template-columns: 1fr;
+	/* single column on mobile */
+	gap: 16px;
+	padding: 16px;
 	border-radius: 14px;
 	border: 1px dashed var(--border);
 	background: rgba(255, 255, 255, .01);
-	margin-bottom: 16px;
+	margin-bottom: 14px;
 }
 
 .experience-item time {
@@ -158,15 +163,15 @@ p {
 }
 
 .experience-wide {
-	grid-template-columns: 180px 1fr;
+	grid-template-columns: 1fr;
 }
 
 /* Chips */
 .tech-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
-	margin-top: 10px;
+	gap: 8px;
+	margin-top: 8px;
 }
 
 .tech-tag {
@@ -178,7 +183,7 @@ p {
 	border: 1px solid rgba(138, 180, 255, .25);
 }
 
-/* Links */
+/* LINKS */
 a {
 	color: var(--accent);
 }
@@ -187,15 +192,68 @@ a:hover {
 	text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width:1024px) {
+/* ========== TABLET (≥640px) SMALL IMPROVEMENTS ========== */
+@media (min-width: 640px) {
+	.nav-links a {
+		margin-right: 22px;
+	}
+
+	section {
+		padding: 24px;
+		margin-bottom: 24px;
+	}
+}
+
+/* ========== DESKTOP LAYOUT (≥1024px): FIXED SIDEBAR ========== */
+@media (min-width: 1024px) {
+	.container {
+		display: flex;
+		padding: 64px 24px;
+	}
+
+	/* Keep the fixed sidebar aligned with the centered container:
+     'left' uses the distance from viewport edge to container + inner padding. */
 	.sidebar {
-		position: static;
-		width: 100%;
-		padding-right: 0;
+		position: fixed;
+		top: 70px;
+		bottom: 32px;
+		left: max(calc((100vw - var(--container-max)) / 2 + 24px), 16px);
+		width: var(--sidebar-w);
+		padding-right: 24px;
+		justify-content: space-between;
+	}
+
+	/* Pin icons to the bottom without scrolling the left column */
+	.social-icons {
+		margin-top: auto;
 	}
 
 	.main-content {
-		margin-left: 0;
+		margin-left: calc(var(--sidebar-w) + var(--gutter));
+		flex: 1;
+		padding-bottom: 140px;
+	}
+
+	.experience-item {
+		grid-template-columns: 140px 1fr;
+		/* two columns on desktop */
+		gap: 24px;
+		padding: 18px;
+		margin-bottom: 16px;
+	}
+
+	.experience-wide {
+		grid-template-columns: 180px 1fr;
+	}
+}
+
+/* ========== XL DESKTOP (≥1280px): breathing room ========== */
+@media (min-width: 1280px) {
+	:root {
+		--container-max: 1280px;
+	}
+
+	.profile .summary {
+		max-width: 40ch;
 	}
 }
