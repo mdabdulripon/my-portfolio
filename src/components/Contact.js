@@ -1,16 +1,19 @@
 import React from "react";
 
 export default function Contact() {
-  return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-200">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
-          Contact
-        </h1>
-        <p className="text-zinc-300 mt-5 leading-relaxed">
-          This is the Contact page. Content coming soon!
-        </p>
-      </div>
-    </div>
-  );
+	return (
+		<section id="contact">
+			<div className="section-header">Contact</div>
+			<p>
+				<strong>Location:</strong> Dallas, TX 75094
+			</p>
+			<p>
+				<strong>Phone:</strong> +1 (929) 218-2399
+			</p>
+			<p>
+				<strong>Email:</strong>{" "}
+				<a href="mailto:mdabdulripon@gmail.com">mdabdulripon@gmail.com</a>
+			</p>
+		</section>
+	);
 }
