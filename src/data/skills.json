@@ -1,0 +1,52 @@
+{
+  "skills": [
+    {
+      "name": "TypeScript / JavaScript (ES6+)"
+    },
+    {
+      "name": "Angular / NX Monorepo"
+    },
+    {
+      "name": "React"
+    },
+    {
+      "name": ".NET 8 / ASP.NET Core"
+    },
+    {
+      "name": "Java 17 / Spring Boot"
+    },
+    {
+      "name": "Clean Architecture"
+    },
+    {
+      "name": "Module / Native Federation"
+    },
+    {
+      "name": "RabbitMQ / MassTransit"
+    },
+    {
+      "name": "Redis (Cache-Aside)"
+    },
+    {
+      "name": "PostgreSQL / MSSQL / MySQL / MongoDB"
+    },
+    {
+      "name": "Docker / Docker Compose"
+    },
+    {
+      "name": "AWS (ECS, ECR, Lambda, API Gateway, S3, RDS)"
+    },
+    {
+      "name": "CI/CD (CodeBuild, CodePipeline)"
+    },
+    {
+      "name": "Testing (JUnit, Jest, Jasmine, Rest Assured)"
+    },
+    {
+      "name": "Build Tools (Maven, Gradle, Webpack, NPM, Yarn)"
+    },
+    {
+      "name": "Version Control (GitHub, GitLab, Bitbucket)"
+    }
+  ]
+}
