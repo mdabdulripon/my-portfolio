@@ -28,10 +28,9 @@ body {
 		var(--bg);
 	line-height: 1.6;
 	scroll-behavior: smooth;
-	/* smooth hash scrolling */
 }
 
-/* Give some offset so #hash links don't sit under the fixed sidebar top */
+/* Ensure hash links don’t hide behind fixed sidebar */
 section {
 	scroll-margin-top: 90px;
 }
@@ -47,7 +46,6 @@ section {
 
 .sidebar {
 	position: static;
-	/* scrolls on mobile */
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -72,25 +70,29 @@ section {
 	max-width: 60ch;
 }
 
-/* ===== Vertical nav + active styling ===== */
+/* ===== NAVIGATION ===== */
+
+/* mobile/tablet — horizontal row */
 .nav-links {
 	display: flex;
-	flex-direction: column;
-	gap: 8px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	margin-top: 16px;
 }
 
 .nav-links a {
-	display: block;
+	display: inline-block;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: var(--muted);
 	font-size: 12px;
 	font-weight: 800;
-	padding: 6px 0 6px 10px;
-	/* left padding for the indicator */
-	border-left: 3px solid transparent;
-	letter-spacing: .12em;
-	transition: color .2s ease, border-color .2s ease;
+	padding: 6px 0;
+	border-bottom: 2px solid transparent;
+	letter-spacing: 0.12em;
+	transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -101,19 +103,16 @@ section {
 .nav-links a.active,
 .nav-links .active {
 	color: var(--accent);
-	border-left-color: var(--accent);
+	border-bottom-color: var(--accent);
 }
 
-/* Optional: better keyboard focus */
-.nav-links a:focus-visible {
-	outline: 2px dashed var(--accent);
-	outline-offset: 2px;
-}
-
+/* ===== SOCIAL ICONS ===== */
 .social-icons {
 	display: flex;
 	gap: 12px;
-	margin-top: auto;
+	justify-content: center;
+	/* centered on small devices */
+	/* margin-top: 24px; */
 }
 
 .icon-btn {
@@ -133,6 +132,7 @@ section {
 	box-shadow: var(--shadow-lg);
 }
 
+/* ===== MAIN CONTENT ===== */
 .main-content {
 	/* stacked by default */
 }
@@ -165,11 +165,10 @@ p {
 	color: var(--muted);
 }
 
-/* Experience blocks */
+/* ===== EXPERIENCE ===== */
 .experience-item {
 	display: grid;
 	grid-template-columns: 1fr;
-	/* single column on mobile */
 	gap: 16px;
 	padding: 16px;
 	border-radius: 14px;
@@ -192,7 +191,7 @@ p {
 	grid-template-columns: 1fr;
 }
 
-/* Chips */
+/* ===== TECH CHIPS ===== */
 .tech-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -209,7 +208,7 @@ p {
 	border: 1px solid rgba(138, 180, 255, .25);
 }
 
-/* LINKS */
+/* ===== LINKS ===== */
 a {
 	color: var(--accent);
 }
@@ -233,12 +232,9 @@ a:hover {
 		padding: 64px 24px;
 	}
 
-	/* Keep the fixed sidebar aligned with the centered container:
-     'left' uses the distance from viewport edge to container + inner padding. */
 	.sidebar {
 		position: fixed;
 		top: 70px;
-		/* your requested top offset */
 		bottom: 32px;
 		left: max(calc((100vw - var(--container-max)) / 2 + 24px), 16px);
 		width: var(--sidebar-w);
@@ -246,8 +242,9 @@ a:hover {
 		justify-content: space-between;
 	}
 
-	/* Pin icons to the bottom without scrolling the left column */
+	/* move icons bottom-left for desktop */
 	.social-icons {
+		justify-content: flex-start;
 		margin-top: auto;
 	}
 
@@ -259,7 +256,6 @@ a:hover {
 
 	.experience-item {
 		grid-template-columns: 140px 1fr;
-		/* two columns on desktop */
 		gap: 24px;
 		padding: 18px;
 		margin-bottom: 16px;
@@ -267,6 +263,24 @@ a:hover {
 
 	.experience-wide {
 		grid-template-columns: 180px 1fr;
+	}
+
+	/* Sidebar nav becomes vertical on desktop */
+	.nav-links {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		justify-content: flex-start;
+	}
+
+	.nav-links a {
+		border-bottom: none;
+		border-left: 3px solid transparent;
+		padding-left: 10px;
+	}
+
+	.nav-links a.active {
+		border-left-color: var(--accent);
 	}
 }
 
