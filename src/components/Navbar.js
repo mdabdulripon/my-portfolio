@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import menuItems from "../data/menu.json"; // adjust path as needed
 
 export default function Navbar() {
 	const [active, setActive] = useState("about");
@@ -11,55 +12,27 @@ export default function Navbar() {
 
 	return (
 		<nav className="nav-links">
-			<a
-				href="#about"
-				onClick={() => handleClick("about")}
-				className={active === "about" ? "active" : ""}
-			>
-				About
-			</a>
-			<a
-				href="#skills"
-				onClick={() => handleClick("skills")}
-				className={active === "skills" ? "active" : ""}
-			>
-				Skills
-			</a>
-			<a
-				href="#experience"
-				onClick={() => handleClick("experience")}
-				className={active === "experience" ? "active" : ""}
-			>
-				Experience
-			</a>
-			<a
-				href="#projects"
-				onClick={() => handleClick("projects")}
-				className={active === "projects" ? "active" : ""}
-			>
-				Projects
-			</a>
-			<a
-				href="#education"
-				onClick={() => handleClick("education")}
-				className={active === "education" ? "active" : ""}
-			>
-				Education
-			</a>
-			<a
-				href="#contact"
-				onClick={() => handleClick("contact")}
-				className={active === "contact" ? "active" : ""}
-			>
-				Contact
-			</a>
-			<Link
-				to="/blog"
-				className={location.pathname === "/blog" ? "active" : ""}
-				onClick={() => setActive("")}
-			>
-				Blog
-			</Link>
+			{menuItems.map((item) =>
+				item.type === "section" ? (
+					<a
+						key={item.id}
+						href={`#${item.id}`}
+						onClick={() => handleClick(item.id)}
+						className={active === item.id ? "active" : ""}
+					>
+						{item.label}
+					</a>
+				) : (
+					<Link
+						key={item.id}
+						to={item.path}
+						className={location.pathname === item.path ? "active" : ""}
+						onClick={() => setActive("")}
+					>
+						{item.label}
+					</Link>
+				)
+			)}
 		</nav>
 	);
 }

@@ -17,6 +17,8 @@ export default function Social() {
 				className="icon-btn"
 				href="https://github.com/mdabdulripon"
 				aria-label="GitHub"
+				target="_blank"
+				rel="noopener noreferrer"
 			>
 				<FaSquareGithub />
 			</a>
@@ -24,6 +26,8 @@ export default function Social() {
 				className="icon-btn"
 				href="https://www.linkedin.com/in/abdul-ripon-030483126/"
 				aria-label="LinkedIn"
+				target="_blank"
+				rel="noopener noreferrer"
 			>
 				<FaLinkedin />
 			</a>
