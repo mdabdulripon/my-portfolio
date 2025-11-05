@@ -1,22 +1,38 @@
 [
 	{
-		"title": "About",
-		"url": "#about"
+		"id": "about",
+		"label": "About",
+		"type": "section"
 	},
 	{
-		"title": "Skills",
-		"url": "#skills"
+		"id": "skills",
+		"label": "Skills",
+		"type": "section"
 	},
 	{
-		"title": "Experience",
-		"url": "#experience"
+		"id": "experience",
+		"label": "Experience",
+		"type": "section"
 	},
 	{
-		"title": "Education",
-		"url": "#education"
+		"id": "projects",
+		"label": "Projects",
+		"type": "section"
 	},
 	{
-		"title": "Contact",
-		"url": "#contact"
+		"id": "education",
+		"label": "Education",
+		"type": "section"
+	},
+	{
+		"id": "contact",
+		"label": "Contact",
+		"type": "section"
+	},
+	{
+		"id": "blog",
+		"label": "Blog",
+		"type": "route",
+		"path": "/blog"
 	}
 ]

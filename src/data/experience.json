@@ -1,0 +1,59 @@
+[
+    {
+        "period": "Jun 2022 — Present",
+        "company": "Fannie Mae",
+        "title": "Senior Associate Full Stack Developer",
+        "location": "Plano, TX",
+        "summary": "Led the frontend team for microservices apps using Angular NX with Module/Native Federation; designed scalable multi-repo architecture; collaborated on REST APIs and AWS integrations; supported DevOps and monitoring.",
+        "tech": [
+            "Angular NX",
+            "TypeScript",
+            "Java",
+            "AWS (Lambda, ECS, S3)",
+            "Native Federation",
+            "Splunk / CloudWatch"
+        ]
+    },
+    {
+        "period": "Apr 2019 — Jun 2022",
+        "company": "CSG International",
+        "title": "Senior Full Stack Developer",
+        "location": "Allen, TX",
+        "summary": "Delivered enterprise payment processing; built reusable UI libraries; optimized microservice communication and latency; owned production monitoring and incident resolution.",
+        "tech": [
+            "Angular",
+            "Node.js",
+            ".NET Core",
+            "PostgreSQL / MSSQL",
+            "AWS (Lambda, DynamoDB, S3, ECS)"
+        ]
+    },
+    {
+        "period": "Aug 2017 — Apr 2019",
+        "company": "Chubb Insurance",
+        "title": "Front-End Developer",
+        "location": "Jersey City, NJ",
+        "summary": "Built insurance web apps (Workers Comp, Cyber ERM, Professional Liability); led UI/UX improvements; added unit tests for Redux-style state; drove review quality.",
+        "tech": [
+            "Angular 6",
+            "TypeScript",
+            "SASS",
+            "PostgreSQL / MongoDB",
+            "Azure"
+        ]
+    },
+    {
+        "period": "Feb 2014 — Aug 2017",
+        "company": "Benchmark Education",
+        "title": "Front End Web Developer",
+        "location": "New Rochelle, NY",
+        "summary": "Built educational publishing apps and internal product management tools; shipped accessible, responsive UIs across devices.",
+        "tech": [
+            "JavaScript",
+            "Vue",
+            "jQuery",
+            "HTML5 / CSS3",
+            "Python"
+        ]
+    }
+]

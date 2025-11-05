@@ -53,15 +53,19 @@ section {
 	margin-bottom: 24px;
 }
 
-.profile h1 {
+.profile .logo {
 	font-size: clamp(28px, 6vw, 40px);
 	line-height: 1.1;
 	margin: 0 0 8px;
+	color: var(--fg);
+	text-decoration: none;
 }
 
 .profile .title {
 	font-weight: 700;
 	opacity: .95;
+	color: var(--fg);
+	font-weight: 300;
 }
 
 .profile .summary {
