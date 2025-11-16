@@ -1,15 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18-alpine'
+            args '-H tcp://jenkins-docker:2376'
+            reuseNode true
+        }
+    }
 
     stages {
         stage('Build') {
-            agent {
-                docker {
-                    image 'node:18-alpine'
-                    args '-H tcp://jenkins-docker:2376'
-                    reuseNode true
-                }
-            }
             steps {
                 sh '''
                     ls -la
