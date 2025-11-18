@@ -11,8 +11,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    ls -la
-                    node --version
                     npm --version
                     npm ci
                     npm run build
@@ -33,12 +31,25 @@ pipeline {
                     npm run test 
                 '''
             }
+            post {
+                always {
+                    junit 'coverage/junit.xml'
+                }
+            }
         }
-    }
-
-    post {
-        always {
-            junit 'coverage/junit.xml'
+        stage('Deploy') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
+            steps {
+                sh '''
+                    npm install -g netlify-cli
+                    netlify --version
+                '''
+            }
         }
     }
 }
