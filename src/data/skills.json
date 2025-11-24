@@ -37,7 +37,10 @@
       "name": "AWS (ECS, ECR, Lambda, API Gateway, S3, RDS)"
     },
     {
-      "name": "CI/CD (CodeBuild, CodePipeline)"
+      "name": "CI/CD (S3, ECS, CodeBuild, CodePipeline)"
+    },
+    {
+      "name": "GitLab CI & Jenkins"
     },
     {
       "name": "Testing (JUnit, Jest, Jasmine, Rest Assured)"
