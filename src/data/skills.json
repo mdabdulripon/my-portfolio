@@ -46,6 +46,9 @@
       "name": "Testing (JUnit, Jest, Jasmine, Rest Assured)"
     },
     {
+      "name": "E2E (Cypress / Playwright)"
+    },
+    {
       "name": "Build Tools (Maven, Gradle, Webpack, NPM, Yarn)"
     },
     {
