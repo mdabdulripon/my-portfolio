@@ -10,6 +10,15 @@ const sectionLinks = [
 	{ name: 'Contact', href: '#contact' },
 ];
 
+test.describe('Site title', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('/');
+	});
+
+	test('renders the page title', async ({ page }) => {
+		await expect(page).toHaveTitle('Abdul Ripon — Senior Software Engineer | Full Stack Developer');
+	});
+});
 
 test.describe('Intro component', () => {
 	test.beforeEach(async ({ page }) => {

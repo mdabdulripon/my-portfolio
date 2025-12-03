@@ -1,5 +1,5 @@
 import React from "react";
-import experience from "../data/experience.json"; // adjust path if needed
+import experience from "../data/experience.json"; 
 
 export default function Experience() {
 	return (

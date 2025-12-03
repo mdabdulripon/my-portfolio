@@ -1,5 +1,5 @@
 import React from "react";
-import contact from "../data/contact.json"; // adjust the path as needed
+import contact from "../data/contact.json"; 
 
 export default function Contact() {
 	return (
