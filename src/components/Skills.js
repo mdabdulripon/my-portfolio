@@ -5,7 +5,6 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="section-header">Technical Skills</div>
-      <h2>Core Competencies</h2>
       <div className="tech-list">
         {skillsData.skills.map((item, index) => (
           <span key={index} className="tech-tag">

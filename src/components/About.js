@@ -4,7 +4,6 @@ export default function About() {
 	return (
 		<section id="about">
 			<div className="section-header">About</div>
-			<h2>Builder of scalable APIs, microservices, and front-ends</h2>
 			<p>
 				I am a Lead Software Engineer with over a decade of experience
 				designing, developing, and deploying enterprise applications across the
