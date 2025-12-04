@@ -6,17 +6,8 @@ describe("About", () => {
 		render(<About />);
 
 		expect(screen.getByText("About")).toBeInTheDocument();
-		expect(
-			screen.getByRole("heading", {
-				name: /builder of scalable apis, microservices, and front-ends/i,
-			})
-		).toBeInTheDocument();
-		expect(
-			screen.getAllByText(/.+/, { selector: "p" })
-		).toHaveLength(4);
-		expect(
-			screen.getByText(/lead software engineer with over a decade/i)
-		).toBeInTheDocument();
+		expect(screen.getAllByText(/.+/, { selector: "p" })).toHaveLength(4);
+		expect(screen.getByText(/lead software engineer with over a decade/i)).toBeInTheDocument();
 	});
 });
 

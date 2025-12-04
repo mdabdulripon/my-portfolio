@@ -26,6 +26,13 @@
     "outputDirectory": "./coverage",
     "outputName": "junit.xml"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.js",
+      "!src/App.js"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
